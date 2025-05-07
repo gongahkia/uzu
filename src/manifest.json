@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Uzu",
+  "version": "1.0",
+  "description": "Gemini AI Wrapper providing legal case insights",
+  "icons": {"128": "icons/icon.png"},
+  "action": {
+    "default_icon": "icons/icon.png",
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
