@@ -2,13 +2,17 @@ const API_KEY_STORAGE_KEY = 'gemini_api_key';
 
 document.addEventListener('DOMContentLoaded', () => {
   chrome.storage.local.get([API_KEY_STORAGE_KEY], (result) => {
+    console.log('[popup.js] Loaded API key from storage:', result[API_KEY_STORAGE_KEY]);
     document.getElementById('apiKey').value = result[API_KEY_STORAGE_KEY] || '';
   });
 });
 
 document.getElementById('saveKey').addEventListener('click', () => {
   const key = document.getElementById('apiKey').value.trim();
-  chrome.storage.local.set({ [API_KEY_STORAGE_KEY]: key });
+  chrome.storage.local.set({ [API_KEY_STORAGE_KEY]: key }, () => {
+    console.log('[popup.js] Saved API key to storage:', key);
+    alert('API key saved!');
+  });
 });
 
 document.getElementById('searchButton').addEventListener('click', () => {

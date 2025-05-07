@@ -4,6 +4,10 @@
 
 ...
 
+A simple browser extension that makes life *(marginally)* easier.
+
+`Uzu` destructures [Legal Case Facts and their Judgements](https://www.judiciary.gov.sg/judgments/judgments-case-summaries) into its essential components, all from only a [Case Name](https://researchguides.smu.edu.sg/c.php?g=421855&p=2881046) *(or [Case Citation](https://en.wikipedia.org/wiki/Case_citation))*.
+
 ## Stack
 
 * *Frontend*: 
@@ -22,21 +26,16 @@
 
 ## Usage
 
+> [!IMPORTANT]  
+> Read the [legal disclaimer](#legal-disclaimer) before using `Uzu`.  
+
 1. Clone the repository.
 
 ```console
 $ git clone https://github.com/gongahkia/uzu
 ```
 
-2. Get your [Gemeni API key](https://ai.google.dev/gemini-api/docs/api-key) and place it within [`popup.js`](./src/popup/popup.js).
-
-```js
-// ...
-
-const API_KEY_STORAGE_KEY = 'XXX';
-
-// ...
-```
+2. Get your [Gemeni API key](https://ai.google.dev/gemini-api/docs/api-key).
 
 Then follow the below instructions for your browser.
 
@@ -44,18 +43,24 @@ Then follow the below instructions for your browser.
 
 1. Copy and paste this link in the search bar *about:debugging#/runtime/this-firefox*.
 2. Click *load temporary add-on*.
-3. Open the `uzu` repo, select `manifest.json`.
-4. Click the toggle button.
+3. Open the `Uzu` repo, select `manifest.json`.
+4. Click the toggle button to open the `Uzu` browser extension.
+5. Input your Gemeni API Key and *save*.
 
 ### Chrome
 
 1. Copy and paste this link in the search bar *chrome://extensions/*.
 2. Toggle *Developer mode* on.
 3. Click *load unpacked*.
-4. Open the `uzu` repo, click *select*.
-5. Click the toggle button.
+4. Open the `Uzu` repo, click *select*.
+5. Click the toggle button to open the `Uzu` browser extension.
+6. Input your Gemeni API Key and *save*.
 
 Support for other browsers like Opera, Vivaldi have not been extensively tested, but this extension should work. Open an issue for further support.
+
+## Other notes
+
+This might be a simple tool, but its something I've wanted to make ever since I entered [Computing & Law](https://computing.smu.edu.sg/bsc-computing-law) in 2023.
 
 ## Reference
 
@@ -64,3 +69,6 @@ The name `Uzu` is in reference to [Maximum: Uzumaki](https://jujutsu-kaisen.fand
 <div align="center">
     <img src="./asset/logo/uzumaki.webp" width="40%">
 </div>
+
+## Legal disclaimer
+
