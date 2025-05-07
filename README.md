@@ -2,8 +2,6 @@
 
 # `Uzu`
 
-...
-
 A [quick and dirty](https://dictionary.cambridge.org/dictionary/english/quick-and-dirty) browser extension that makes [reading law modules](./asset/logo/law.webp) *(marginally)* easier.
 
 `Uzu` destructures [Legal Case Facts and their Judgements](https://www.judiciary.gov.sg/judgments/judgments-case-summaries) into its essential components, all from only a [Case Name](https://researchguides.smu.edu.sg/c.php?g=421855&p=2881046) *(or [Case Citation](https://en.wikipedia.org/wiki/Case_citation))*.
@@ -12,20 +10,32 @@ It provides [clean formatted output](#screenshots) for most users and a [standar
 
 ## Stack
 
-* *Frontend*: 
-* *Backend*: 
-* *DB*: 
+* *Frontend*: HTML, CSS
+* *Backend*: JavaScript
 
 ## Screenshots
 
-![](./asset/reference/1.png)
-![](./asset/reference/2.png)
-![](./asset/reference/3.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="./asset/reference/1.png" width="49%">
+  <img src="./asset/reference/2.png" width="49%">
+</div>
+
+<br>
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="./asset/reference/3.png" width="49%">
+  <img src="./asset/reference/4.png" width="49%">
+</div>
 
 ## JSON response
 
 ```json
-
+{
+  "case_facts": "...",
+  "ruling": "...",
+  "tags": [...],
+  "summary": "..."
+}
 ```
 
 ## Architecture
