@@ -78,7 +78,7 @@ Support for other browsers like Opera, Vivaldi have not been extensively tested,
 
 ## Other notes
 
-This might be a simple tool, but its something I've wanted to make ever since I entered [Computing & Law](https://computing.smu.edu.sg/bsc-computing-law) in 2023.
+This might be a simple tool, but it's something I've wanted to make ever since I entered [Computing & Law](https://computing.smu.edu.sg/bsc-computing-law) in 2023.
 
 ## Reference
 
