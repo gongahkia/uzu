@@ -59,13 +59,40 @@ async function analyzeCase(caseName) {
 
 function parseGeminiResponse(data) {
   try {
-    let text = data.candidates[0].content.parts[0].text;
-    text = text.replace(/``````/g, '').trim();
-    const parsed = JSON.parse(text);
-    console.log('[background.js] Parsed Gemini response:', parsed);
-    return parsed;
+    let text = data.candidates[0]?.content?.parts[0]?.text || '';
+    console.log('[background.js] Raw API response text:', text);
+
+    const jsonStart = text.indexOf('{');
+    const jsonEnd = text.lastIndexOf('}') + 1;
+    if (jsonStart === -1 || jsonEnd === 0) {
+      throw new Error('No JSON found in response');
+    }
+    
+    const jsonString = text.slice(jsonStart, jsonEnd)
+      .replace(/\n/g, ' ')  
+      .trim();
+
+    console.log('[background.js] Cleaned JSON string:', jsonString);
+
+    const parsed = JSON.parse(jsonString);
+    
+    if (!parsed.case_facts || !parsed.ruling || !parsed.tags || !parsed.summary) {
+      throw new Error('Response missing required fields');
+    }
+
+    if (typeof parsed.tags === 'string') {
+      parsed.tags = parsed.tags.split(',').map(t => t.trim());
+    }
+
+    return {
+      case_facts: parsed.case_facts.replace(/\s+/g, ' '),
+      ruling: parsed.ruling.replace(/\s+/g, ' '),
+      tags: parsed.tags.map(t => t.charAt(0).toUpperCase() + t.slice(1).toLowerCase()),
+      summary: parsed.summary.replace(/\s+/g, ' ')
+    };
+    
   } catch (e) {
-    console.error('[background.js] Failed to parse Gemini response:', e);
-    throw new Error('Failed to parse Gemini response as JSON.');
+    console.error('[background.js] Parsing error:', e.message, 'Raw text:', text);
+    throw new Error(`Failed to parse response: ${e.message}`);
   }
 }
