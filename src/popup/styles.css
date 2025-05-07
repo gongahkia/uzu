@@ -137,3 +137,18 @@ button:hover {
   padding: 12px;
   margin-top: 18px;
 }
+
+.footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.97em;
+  color: #888;
+}
+.footer a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: bold;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
