@@ -63,7 +63,7 @@ Then follow the below instructions for your browser.
 2. Click *load temporary add-on*.
 3. Open the `Uzu` repo, select `manifest.json`.
 4. Click the toggle button to open the `Uzu` browser extension.
-5. Input your Gemeni API Key and *save*.
+5. Input your Gemeni API Key and *Save*.
 
 ### Chrome
 
@@ -72,7 +72,7 @@ Then follow the below instructions for your browser.
 3. Click *load unpacked*.
 4. Open the `Uzu` repo, click *select*.
 5. Click the toggle button to open the `Uzu` browser extension.
-6. Input your Gemeni API Key and *save*.
+6. Input your Gemeni API Key and *Save*.
 
 Support for other browsers like Opera, Vivaldi have not been extensively tested, but this extension should work. Open an issue for further support.
 
