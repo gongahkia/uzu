@@ -79,3 +79,61 @@ button:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.uzu-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(60, 64, 67, 0.07);
+  padding: 24px 20px;
+  margin-top: 18px;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.uzu-section {
+  margin-bottom: 22px;
+}
+
+.uzu-section-title {
+  font-weight: bold;
+  color: #1a73e8;
+  font-size: 1.08em;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.02em;
+}
+
+.uzu-section-content {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-left: 2px;
+}
+
+.uzu-tags {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.uzu-tags li {
+  background: #e3f0fb;
+  color: #1769aa;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 0.97em;
+  margin-bottom: 4px;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: bold;
+  background: #ffeaea;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 18px;
+}

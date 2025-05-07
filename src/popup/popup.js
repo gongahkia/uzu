@@ -49,3 +49,52 @@ function displayResult(data) {
 function showLoading(show) {
   document.getElementById('loader').style.display = show ? 'block' : 'none';
 }
+
+function renderCaseResult(data) {
+  if (!data || data.error) {
+    document.getElementById('output').innerHTML = `<div class="error">${data?.error || 'No data'}</div>`;
+    return;
+  }
+  document.getElementById('output').innerHTML = `
+    <div class="uzu-card">
+      <div class="uzu-section">
+        <div class="uzu-section-title">Summary</div>
+        <div class="uzu-section-content">${data.summary}</div>
+      </div>
+      <div class="uzu-section">
+        <div class="uzu-section-title">Case Facts</div>
+        <div class="uzu-section-content">${data.case_facts}</div>
+      </div>
+      <div class="uzu-section">
+        <div class="uzu-section-title">Ruling</div>
+        <div class="uzu-section-content">${data.ruling}</div>
+      </div>
+      <div class="uzu-section">
+        <div class="uzu-section-title">Tags</div>
+        <ul class="uzu-tags">
+          ${Array.isArray(data.tags) ? data.tags.map(tag => `<li>${tag}</li>`).join('') : ''}
+        </ul>
+      </div>
+    </div>
+  `;
+}
+
+document.getElementById('searchButton').addEventListener('click', () => {
+  const caseName = document.getElementById('caseInput').value.trim();
+  if (!caseName) {
+    alert('Please enter a case name');
+    return;
+  }
+  showLoading(true);
+  chrome.runtime.sendMessage(
+    { action: "analyzeCase", caseName },
+    (response) => {
+      showLoading(false);
+      if (response && response.success && response.data) {
+        renderCaseResult(response.data);
+      } else {
+        renderCaseResult({ error: response?.error || "Unknown error" });
+      }
+    }
+  );
+});

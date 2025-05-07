@@ -4,9 +4,11 @@
 
 ...
 
-A simple browser extension that makes life *(marginally)* easier.
+A [quick and dirty](https://dictionary.cambridge.org/dictionary/english/quick-and-dirty) browser extension that makes [reading law modules](./asset/logo/law.webp) *(marginally)* easier.
 
 `Uzu` destructures [Legal Case Facts and their Judgements](https://www.judiciary.gov.sg/judgments/judgments-case-summaries) into its essential components, all from only a [Case Name](https://researchguides.smu.edu.sg/c.php?g=421855&p=2881046) *(or [Case Citation](https://en.wikipedia.org/wiki/Case_citation))*.
+
+It provides [clean formatted output](#screenshots) for most users and a [standardised JSON response](#json-response) for nerds.
 
 ## Stack
 
@@ -19,6 +21,12 @@ A simple browser extension that makes life *(marginally)* easier.
 ![](./asset/reference/1.png)
 ![](./asset/reference/2.png)
 ![](./asset/reference/3.png)
+
+## JSON response
+
+```json
+
+```
 
 ## Architecture
 
