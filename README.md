@@ -53,7 +53,7 @@ It provides [clean formatted output](#screenshots) for most users and a [standar
 $ git clone https://github.com/gongahkia/uzu
 ```
 
-2. Get your [Gemeni API key](https://ai.google.dev/gemini-api/docs/api-key).
+2. Get your [Gemini API key](https://ai.google.dev/gemini-api/docs/api-key).
 
 Then follow the below instructions for your browser.
 
@@ -63,7 +63,7 @@ Then follow the below instructions for your browser.
 2. Click *load temporary add-on*.
 3. Open the `Uzu` repo, select `manifest.json`.
 4. Click the toggle button to open the `Uzu` browser extension.
-5. Input your Gemeni API Key and *Save*.
+5. Input your Gemini API Key and *Save*.
 
 ### Chrome
 
@@ -130,3 +130,4 @@ This disclaimer may be updated from time to time without notice. It is your resp
 ### Data Privacy
 
 Information processed through Uzu may be transmitted to and processed by third-party API services. By using Uzu, you consent to such processing and transmission. Users should review the privacy policies of the Gemini Flash 2.0 API and other integrated services for further information on data handling practices.
+
